@@ -12,7 +12,7 @@
 #print(fizz_buzz(int(input ("自然数を入力してください: "))))
 
 
-def fizz_buzz(n):
+def fizz_buzz(n, x, y):
    if n % x == 0 and n % y == 0:
        return "FizzBuzz"
    elif n % x == 0:
@@ -21,7 +21,4 @@ def fizz_buzz(n):
        return "Buzz"
    else:
        return str(n)  
-n = int(input("nを入力してください: "))
-x = int(input("xを入力してください: "))
-y = int(input("yを入力してください: "))
-print(fizz_buzz(n))
+print(fizz_buzz(int(input("nを入力してください: ")), int(input("xを入力してください: ")), int(input("yを入力してください: "))))
