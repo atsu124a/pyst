@@ -1,6 +1,8 @@
-def main():
-    print("Hello from pyst!")
-
-
-if __name__ == "__main__":
-    main()
+num = int(input ("自然数を入力してください: "))
+if num % 3 == 0 and num % 5 == 0:
+    print("FizzBuzz")
+elif num % 3 == 0:
+    print("Fizz")   
+elif num % 5 == 0:
+    print("Buzz")
+else:    print(str(num))
