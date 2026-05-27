@@ -1,24 +1,33 @@
-#def fizz_buzz(num):
-#
- #   if num % 3 == 0 and num % 5 == 0:
- #       return "FizzBuzz"
- #   elif num % 3 == 0:
- #       return "Fizz"
- #   elif num % 5 == 0:
- #       return "Buzz"
- #   else:
- #       return str(num)
+import random
+import math
+
+def calc_distance(x1, y1, x2, y2):
+    diff_x = x1 - x2
+    diff_y = y1 - y2
     
-#print(fizz_buzz(int(input ("自然数を入力してください: "))))
+    return math.sqrt(diff_x**2 + diff_y**2)
 
 
-def fizz_buzz(n, x, y):
-   if n % x == 0 and n % y == 0:
-       return "FizzBuzz"
-   elif n % x == 0:
-       return "Fizz"
-   elif n % y == 0:
-       return "Buzz"
-   else:
-       return str(n)  
-print(fizz_buzz(int(input("nを入力してください: ")), int(input("xを入力してください: ")), int(input("yを入力してください: "))))
+suika_x = random.randrange(0, 5)
+suika_y = random.randrange(0, 5)
+
+player_x = random.randrange(0, 5)
+player_y = random.randrange(0, 5) 
+
+while (suika_x != player_x) or (suika_y != player_y):
+    distance = calc_distance(player_x, player_y, suika_x, suika_y)
+    print("スイカへの距離:", distance)
+    
+    c = input("n:北に移動 s:南に移動 e:東に移動 w:西に移動")
+    if c == "n":
+        player_y = player_y - 1
+    elif c == "s":
+        player_y = player_y + 1
+    elif c == "w":
+        player_x = player_x - 1
+    elif c == "e":
+        player_x = player_x + 1
+    else:
+        print("無効な入力です。n, s, e, wのいずれかを入力してください。")
+
+print("スイカを割りました！")
